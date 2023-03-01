@@ -13,14 +13,15 @@ function newImage (url, left, bottom) {
     object.style.left = left + 'px'
     object.style.bottom = bottom + 'px'
     document.body.append(object)
-    
-    object.addEventListener('click', function(){
-        object.remove()
-    })
+    return object
 }
 
 function newItem(url, left, bottom) {
     let object = newImage(url, left, bottom)
+
+    object.addEventListener('click', function(){
+        object.remove()
+    })
 }
 
 let horizon = window.innerHeight / 1.75
